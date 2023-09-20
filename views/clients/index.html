@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="/images/icono.ico">
+    <title>Gloss Nails</title>
+</head>
+
+<body>
+
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <input type="checkbox" id="check">
+    <header>
+        <label for="check">
+            <i class="fas fa-bars" id="sidebar_btn"></i>
+        </label>
+        <div class="left_area">
+            <h3>Gloss <span>Nails</span></h3>
+        </div>
+        <div class="rigth_area">
+            <button class="logout_btn">Cerrar sesión</button>
+        </div>
+    </header>
+    <!-- header area end -->
+    <!-- mobile navigation bar start -->
+    <div class="mobile_nav">
+        <div class="nav_bar">
+            <img src="/images/logo2.png" class="mobile_profile_image" alt="">
+            <i class="fa fa-bars nav_btn"></i>
+        </div>
+        <div class="mobile_nav_items">
+            <a href="/admin/"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+            <a href="/clients/"><i class="fas fa-table"></i><span>Citas</span></a>
+        </div>
+    </div>
+    <!-- mobile navigation bar start -->
+    <!-- sidebar start -->
+    <div class="sidebar">
+        <div class="profile_info">
+            <img src="/images/logo2.png" class="profile_image" alt="">
+            <h4 id="title-info"></h4>
+        </div>
+        <a href="/admin/"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+        <a href="/clients/"><i class="fas fa-sliders-h"></i><span>Citas</span></a>
+    </div>
+    <!-- sidebar end -->
+
+    <div class="content">
+        <div class="details">
+            <div class="main-table">
+                <div class="title">
+                    <h2>Usuarios</h2>
+                </div>
+                <div class="user_table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Name</td>
+                                <td>Email</td>
+                                <td>Tlf</td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+            <div class="main-table">
+                <div class="title">
+                    <h2>Citas</h2>
+                </div>
+                <div class="citas_table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Cliente</td>
+                                <td>Fecha</td>
+                                <td>Hora</td>
+                                <td class="action">Accion</td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

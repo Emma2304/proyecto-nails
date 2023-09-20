@@ -1,0 +1,684 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Sriracha&display=swap");
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar:horizontal {
+    height: 14px;
+}
+
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(180deg, #eb3cf1, #a73ea8);
+    box-shadow: inset 2px 2px 5px 0 rgba(255, 255, 255, .5);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #eb3cf1;
+}
+
+/* loader */
+.preloader {
+    width: 100%;
+    height: 100%;
+    background: #4d4b4b;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+    transition: opacity 0.75s, visibility 0.75s;
+}
+
+.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.spinner {
+    width: 100px;
+    height: 100px;
+    display: grid;
+    position: absolute;
+    top: 16rem;
+    border: 4.5px solid #0000;
+    border-radius: 50%;
+    border-color: #dbdcef #0000;
+    animation: spinner-e04l1k 1s infinite linear;
+}
+
+.spinner::before,
+.spinner::after {
+    content: "";
+    grid-area: 1/1;
+    margin: 2.2px;
+    border: inherit;
+    border-radius: 50%;
+}
+
+.spinner::before {
+    border-color: #fb3fda #0000;
+    animation: inherit;
+    animation-duration: 0.5s;
+    animation-direction: reverse;
+}
+
+.spinner::after {
+    margin: 8.9px;
+}
+
+@keyframes spinner-e04l1k {
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+/* loader end */
+
+
+/* CSS for header */
+.header {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 5px 3%;
+}
+
+.header .logo {
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.header .logo img {
+    height: 70px;
+    width: auto;
+    transition: all 0.3s;
+}
+
+.header .logo img:hover,
+.overlay a:hover {
+    transform: scale(1.2);
+}
+
+.header .btn button,
+.header .menu button {
+    color: #fff;
+    padding: 10px 30px;
+    background: #ea78ec;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    box-shadow: 0px 4px 20px 5px rgba(235, 112, 252, 0.514)
+}
+
+.header .btn button:hover,
+.header .menu button:hover {
+    background-color: #d366d4;
+    color: rgb(255, 242, 242);
+    transform: scale(1.1);
+}
+
+.menu {
+    display: none;
+}
+
+.btn-up {
+    font-size: 17px;
+    font-family: 'Roboto', sans-serif;
+    color: #a0a0a0;
+    padding: 1rem 6px;
+    transition: 0.5s;
+}
+
+.btn-up:hover {
+    color: #8f7878;
+    transform: scale(1.1);
+}
+
+.nav-items {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.nav-items a {
+    position: relative;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    color: #a0a0a0;
+    padding: 35px 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.nav-items a:before,
+.nav-items a:after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 0;
+    background-color: #8f7878;
+    transition: 0.5s;
+}
+
+.nav-items a:after {
+    left: 0px;
+    bottom: 16px;
+}
+
+.nav-items a:before {
+    right: 0;
+    top: 16px;
+}
+
+.nav-items a:hover {
+    color: #8f7878;
+}
+
+.nav-items a:hover:after,
+.nav-items a:hover:before {
+    width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+
+    .nav-items,
+    .btn-up,
+    .btn {
+        display: none;
+    }
+
+    .menu {
+        display: inherit;
+    }
+}
+
+/* Nav */
+
+.header a {
+    text-decoration: none;
+}
+
+.header .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgba(33, 49, 63, .95);
+    overflow: hidden;
+    transition: all 0.3s ease 0s;
+}
+
+.header .overlay .overlay-content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.header .overlay a {
+    padding: 1rem;
+    font-size: 36px;
+    display: block;
+    transition: all 0.3s ease 0s;
+    font-weight: 700;
+    color: #f1f1f1;
+}
+
+.header .overlay a:hover,
+.header .overlay a:focus {
+    color: #be3ac0;
+}
+
+.header .overlay .close {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 65px;
+    cursor: pointer;
+}
+
+@media screen and (max-height:450px) {
+    .header .overlay a {
+        font-size: 20px;
+    }
+
+    .header .overlay .close {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+/* CSS for main element */
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 520px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://images.squarespace-cdn.com/content/v1/5f834a0c50899866fcb93a61/1602684155249-7OBCZRIGCVV1SKO1U524/AdobeStock_340358917.jpeg?format=2500w");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.intro h1 {
+    font-family: sans-serif;
+    font-size: 60px;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.intro p {
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: #d1d1d1;
+    text-transform: uppercase;
+    margin: 20px 0;
+}
+
+.intro a {
+    background-color: transparent;
+    color: #ea78ec;
+    padding: 12px;
+    width: 17rem;
+    border: none;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 20px 12px rgba(235, 112, 252, 0.514)
+}
+
+.intro a:hover {
+    background-color: #be3ac0;
+    color: white;
+}
+
+.achievements {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+}
+
+.achievements h1 {
+    font-family: sans-serif;
+    font-size: 40px;
+    color: #f7acda;
+    position: absolute;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+
+.achievements .work {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 40px 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.achievements .work .work-heading {
+    font-size: 26px;
+    color: #f7acda;
+    text-transform: uppercase;
+    margin: 10px 0;
+}
+
+.achievements .work img {
+    width: 400px;
+    border-radius: 50%;
+    border: 2px solid #f7acda;
+    padding: 10px;
+}
+
+
+.container-capricho {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    background-color: #424242;
+}
+
+.capricho {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.capricho h1 {
+    font-size: 3.5rem;
+    color: #fff;
+}
+
+.capricho a {
+    background-color: transparent;
+    color: #b9b9b9;
+    padding: 12px;
+    width: 14rem;
+    border: solid 2px #b9b9b9;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.capricho a:hover {
+    background-color: #b9b9b9;
+    color: #fff;
+}
+
+.title-carrusel {
+    text-align: center;
+    padding: 1rem;
+    font-size: 3rem;
+    color: #424242;
+}
+
+.carrusel {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    overflow: scroll;
+    overflow-y: hidden;
+}
+
+.informacion {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+}
+
+.informacion h1 {
+    font-family: sans-serif;
+    font-size: 40px;
+    color: #f7acda;
+    position: absolute;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+
+.informacion .work {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 40px 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.informacion .work {
+    font-size: 26px;
+    color: #f7acda;
+    text-transform: uppercase;
+    margin: 10px 0;
+}
+
+.informacion .work img {
+    width: 400px;
+    height: 480px;
+    border: 2px solid #f7acda;
+    padding: 10px;
+}
+
+.elemento {
+    flex: 1 0 auto;
+    margin: 5px 25px;
+    width: 450px;
+    height: 350px;
+}
+
+.elemento img {
+    width: 100%;
+    height: 100%;
+    border: solid 3px #f7acda;
+    padding: 4px;
+}
+
+/* CSS for footer */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f7acda;
+    padding: 16px 80px;
+}
+
+.footer .copy {
+    font-size: 40px;
+    color: #fff;
+    border: solid 2px;
+    text-align: center;
+    border-radius: 6.5rem;
+    padding: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    box-shadow: 0px 0px 20px 16px rgba(235, 112, 252, 0.514)
+}
+
+.bottom-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.bottom-links .links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+    gap: 0.5rem;
+}
+
+.bottom-links .links span {
+    font-size: 28px;
+    color: #bb5594;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: sans-serif;
+    margin: 10px 0;
+}
+
+.bottom-links .links a {
+    text-decoration: none;
+    font-family: sans-serif;
+    color: #ffffff;
+    padding: 10px 12px;
+    font-size: 19px;
+    border: solid 2px;
+    border-radius: 6.5rem;
+}
+
+.bottom-links:hover,
+.links a:hover {
+    color: #bb5594;
+}
+
+/* Adaptable (Responsivo) */
+@media (max-width: 375px) {
+    .intro h1 {
+        font-size: 40px;
+    }
+
+    .intro p {
+        font-size: 15px;
+    }
+
+    .intro button {
+        width: 13rem;
+        font-size: 16px;
+    }
+
+    .achievements .work img {
+        width: 350px;
+    }
+
+    .capricho h1 {
+        font-size: 2.3rem;
+    }
+
+    .capricho button {
+        width: 12rem;
+    }
+
+    .title-carrusel {
+        font-size: 2.4rem;
+    }
+
+    .informacion {
+        padding: 1rem;
+    }
+
+    .informacion h1 {
+        font-size: 2.3rem;
+    }
+
+    .informacion .work img {
+        width: 330px;
+        height: 390px;
+    }
+
+    .footer {
+        flex-direction: column;
+        padding: 16px 25px;
+    }
+}
+
+@media (max-width: 550px) {
+    .intro h1 {
+        font-size: 50px;
+    }
+
+    .intro p {
+        font-size: 16px;
+    }
+
+    .intro button {
+        width: 15rem;
+        font-size: 18px;
+    }
+
+    .achievements .work img {
+        width: 350px;
+    }
+
+    .capricho h1 {
+        font-size: 2.4rem;
+    }
+
+    .title-carrusel {
+        font-size: 2.6rem;
+    }
+
+    .elemento {
+        width: 300px;
+        height: 270px;
+        margin: 0 16px;
+    }
+
+    .footer {
+        flex-direction: column;
+        padding: 16px 50px;
+    }
+
+    .footer .copy {
+        font-size: 30px;
+    }
+
+    .bottom-links {
+        flex-direction: row;
+        padding: 1rem;
+    }
+
+    .bottom-links .links {
+        padding: 0 7px;
+    }
+
+    .bottom-links .links span {
+        font-size: 24px;
+    }
+
+    .bottom-links .links a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 800px) {
+    .achievements {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .achievements h1 {
+        position: relative;
+        text-align: center;
+    }
+
+    .achievements .work {
+        padding: 1rem 0 0 0;
+    }
+
+    .informacion {
+        flex-direction: column;
+    }
+
+    .informacion h1 {
+        position: relative;
+        text-align: center;
+    }
+
+    .informacion .work {
+        margin: 0;
+        padding: 1.5rem 40px 0px;
+    }
+
+    .footer {
+        padding: 16px 50px;
+    }
+}

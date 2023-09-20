@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="/images/icono.ico">
+    <title>Gloss Nails</title>
+</head>
+
+<body>
+
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <input type="checkbox" id="check">
+    <header>
+        <label for="check">
+            <i class="fas fa-bars" id="sidebar_btn"></i>
+        </label>
+        <div class="left_area">
+            <h3>Gloss <span>Nails</span></h3>
+        </div>
+        <div class="rigth_area">
+            <button class="logout_btn">Cerrar sesión</button>
+        </div>
+    </header>
+    <!-- header area end -->
+    <!-- mobile navigation bar start -->
+    <div class="mobile_nav">
+        <div class="nav_bar">
+            <img src="/images/logo2.png" class="mobile_profile_image" alt="">
+            <i class="fa fa-bars nav_btn"></i>
+        </div>
+        <div class="mobile_nav_items">
+            <a href="/agenda/"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+            <a href="/clients/"><i class="fas fa-table"></i><span>Citas</span></a>
+        </div>
+    </div>
+    <!-- mobile navigation bar start -->
+    <!-- sidebar start -->
+    <div class="sidebar">
+        <div class="profile_info">
+            <img src="/images/logo2.png" class="profile_image" alt="">
+            <h4 id="title-info"></h4>
+        </div>
+        <a href="/admin/"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+        <a href="/clients/"><i class="fas fa-sliders-h"></i><span>Citas</span></a>
+    </div>
+    <!-- sidebar end -->
+
+    <div class="content">
+        <!-- cards -->
+        <div class="cardBox">
+            <div class="card">
+                <div class="cards">
+                    <span id="span-users" class="numbers"></span>
+                    <span class="cardName">Usuarios</span>
+                </div>
+                <div class="iconBox">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+                    </svg>
+                </div>
+            </div>
+            <div class="card">
+                <div class="cards">
+                    <span id="span-citas" class="numbers"></span>
+                    <span class="cardName">Citas Pendientes</span>
+                </div>
+                <div class="iconBox">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="details">
+            <div class="recentOrders">
+                <div class="cardHeader">
+                    <h2>Citas</h2>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Cliente</td>
+                            <td>Fecha</td>
+                            <td>Horario</td>
+                            <td>Servicio</td>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="recentCustomers">
+                <div class="cardHeader">
+                    <h2>Usuarios</h2>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

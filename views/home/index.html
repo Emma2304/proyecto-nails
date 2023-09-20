@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="/images/icono.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Gloss Nails</title>
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+
+
+    <header class="header">
+        <div class="logo">
+            <img src="/images/logo2.png" alt="logo de la marca">
+        </div>
+        <nav class="nav-items">
+            <li><a href="#">Home</a></li>
+            <li><a href="#informacion">Servicios</a></li>
+            <li><a href="https://wa.me/04127723256">Contact Us</a></li>
+        </nav>
+        <a class="btn-up" href="/signup/">Sign Up</a>
+        <a class="btn" href="/login/"><button>Log In</button></a>
+
+        <a onclick="openNav()" class="menu"><button>Menu</button></a>
+
+        <div class="overlay" id="mobile-menu">
+            <a onclick="closeNav()" class="close">&times;</a>
+            <div class="overlay-content">
+                <a href="https://wa.me/04127723256">Contact Us</a>
+                <a href="/signup/">Sign Up</a>
+            </div>
+        </div>
+
+    </header>
+    <main>
+        <div class="intro">
+            <h1>Bienveni@s</h1>
+            <p>Garantizamos el éxito de tu diseño de uñas.</p>
+            <a href="/login/">Reservar ahora</a>
+        </div>
+        <div class="achievements">
+            <h1>Servicios</h1>
+            <div id="servicios" class="work">
+                <p class="work-heading">Manicure</p>
+                <img src="/images/manos.jpeg" alt="">
+            </div>
+            <div class="work">
+                <p class="work-heading">Pedicure</p>
+                <img src="/images/pies.jpeg" alt="">
+            </div>
+        </div>
+        <div class="container-capricho">
+            <div class="capricho">
+                <h1>Date un capricho, hoy.</h1>
+                <a href="/login/">Reservar una cita</a>
+            </div>
+        </div>
+        <h1 class="title-carrusel">Siguenos mas de cerca.</h1>
+        <div class="carrusel">
+            <div class="elemento">
+                <img src="/images/nails.jpeg" alt="">
+            </div>
+            <div class="elemento">
+                <img src="/images/nails1.jpeg" alt="">
+            </div>
+            <div class="elemento">
+                <img src="/images/nails2.webp" alt="">
+            </div>
+            <div class="elemento">
+                <img src="/images/nails3.jpg" alt="">
+            </div>
+            <div class="elemento">
+                <img src="/images/nails4.jpg" alt="">
+            </div>
+            <div class="elemento">
+                <img src="/images/nails5.jpg" alt="">
+            </div>
+            <div class="elemento">
+                <img src="/images/nails6.jpg" alt="">
+            </div>
+        </div>
+        <div id="informacion" class="informacion">
+            <h1>Precios y servicios...</h1>
+            <div class="work">
+                <img src="/images/precios.jpeg" alt="">
+            </div>
+            <div class="work">
+                <img src="/images/servicios.jpeg" alt="">
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="copy">Gloss Nails</div>
+        <div class="bottom-links">
+            <div class="links">
+                <span>More Info</span>
+                <a href="#">Home</a>
+                <a href="#servicios">Services</a>
+                <a href="https://wa.me/04127723256">Contact Us</a>
+            </div>
+            <div class="links">
+                <span>Social Links</span>
+                <a href="https://www.instagram.com/studio_gloss_nails_/"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="navHome.js"></script>
+</body>
+
+</html>

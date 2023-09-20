@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(90deg, #ffdaf2, #eb5dbf, #ff23bb);
+    background-size: 180% 180%;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* loader */
+.preloader {
+    width: 100%;
+    height: 100%;
+    background: #4d4b4b;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+    transition: opacity 0.75s, visibility 0.75s;
+}
+
+.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.spinner {
+    width: 100px;
+    height: 100px;
+    display: grid;
+    position: absolute;
+    top: 16rem;
+    border: 4.5px solid #0000;
+    border-radius: 50%;
+    border-color: #dbdcef #0000;
+    animation: spinner-e04l1k 1s infinite linear;
+}
+
+.spinner::before,
+.spinner::after {
+    content: "";
+    grid-area: 1/1;
+    margin: 2.2px;
+    border: inherit;
+    border-radius: 50%;
+}
+
+.spinner::before {
+    border-color: #fb3fda #0000;
+    animation: inherit;
+    animation-duration: 0.5s;
+    animation-direction: reverse;
+}
+
+.spinner::after {
+    margin: 8.9px;
+}
+
+@keyframes spinner-e04l1k {
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+/* loader end */
+
+.sign-up {
+    background-color: #fff;
+    width: 400px;
+    height: 550px;
+    row-gap: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0px 0px 24px #f300d5;
+}
+
+.sign-up-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 1rem;
+}
+
+.input-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.icon-input {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    width: 20px;
+    color: blueviolet;
+}
+
+.sign-up-with {
+    font-size: 15px;
+    position: relative;
+    color: rgb(90, 90, 90);
+}
+
+.sign-up-with::before {
+    position: absolute;
+    content: "";
+    left: -90px;
+    top: 10px;
+    width: 80px;
+    height: 1px;
+    background-color: darkorchid;
+}
+
+.sign-up-with::after {
+    position: absolute;
+    content: "";
+    right: -90px;
+    top: 10px;
+    width: 80px;
+    height: 1px;
+    background-color: darkorchid;
+}
+
+.google,
+.facebook {
+    width: 42px;
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    text-decoration: none;
+    color: blueviolet;
+    cursor: pointer;
+}
+
+.google:hover,
+.facebook:hover {
+    transform: scale(1.2);
+}
+
+.companies {
+    gap: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.input {
+    border: none;
+    border-bottom: 2px solid #D1D1D4;
+    width: 300px;
+    height: 40px;
+    font-size: 1rem;
+    transition: .2s;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.sub-titles {
+    color: darkmagenta;
+    font-weight: 400;
+}
+
+.submit-btn {
+    width: 300px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #fff;
+    box-shadow: 3px 3px 3px 0.5px #5C5696;
+    background: linear-gradient(334deg, #ff23bb, #bd48b4, #f32887);
+    background-size: 180% 180%;
+    animation: gradient-animation 6s ease infinite;
+    transition: 0.3s all ease-in-out;
+}
+
+.submit-btn:hover {
+    transform: scale(1.05);
+    transition: 0.3s all ease-in-out;
+}
+
+.sign-up-title {
+    font-size: 30px;
+}
+
+.signup {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1rem;
+    bottom: 40px;
+}
+
+.signup a {
+    color: rgb(207 7 157);
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.signup a:hover {
+    text-decoration: underline rgb(126, 41, 93);
+}
+
+
+/* @keyframes animation{
+    0%{
+        background-position: 0% 50%;
+    }
+
+    50%{
+        background-position: 50% 50%;
+    }
+
+    75%{
+        background-position: 50% 0%;
+    }
+
+    100%{
+        background-position: 0% 50%;
+    }
+} */
+
+
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Adaptable (Responsivo) */
+@media (max-width: 550px) {
+    .sign-up {
+        width: 375px;
+        height: 520px;
+        row-gap: 10px;
+    }
+
+    .icon-input {
+        display: none;
+    }
+
+    .input-box {
+        position: initial;
+    }
+}
+
+@media (max-width: 775px) {
+    .sign-up {
+        height: 520px;
+        row-gap: 13px;
+    }
+}

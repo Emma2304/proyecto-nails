@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="/images/icono.ico">
+    <title>Gloss Nails</title>
+</head>
+
+<body>
+
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <input type="checkbox" id="check">
+    <header>
+        <label for="check">
+            <i class="fas fa-bars" id="sidebar_btn"></i>
+        </label>
+        <div class="left_area">
+            <h3>Gloss <span>Nails</span></h3>
+        </div>
+        <div class="rigth_area">
+            <button class="logout_btn">Cerrar sesión</button>
+        </div>
+    </header>
+    <!-- header area end -->
+    <!-- mobile navigation bar start -->
+    <div class="mobile_nav">
+        <div class="nav_bar">
+            <img src="/images/logo2.png" class="mobile_profile_image" alt="">
+            <i class="fa fa-bars nav_btn"></i>
+        </div>
+        <div class="mobile_nav_items">
+            <a href="/agenda/"><i class="fas fa-desktop"></i><span>Home</span></a>
+            <a href="/citas/"><i class="fas fa-sliders-h"></i><span>Agendar</span></a>
+            <a href="/pendientes/"><i class="fas fa-table"></i><span>Mis citas</span></a>
+            <a href="#"><i class="fas fa-info-circle"></i><span>info</span></a>
+        </div>
+    </div>
+    <!-- mobile navigation bar start -->
+    <!-- sidebar start -->
+    <div class="sidebar">
+        <div class="profile_info">
+            <img src="/images/logo2.png" class="profile_image" alt="">
+            <h4 id="title-info"></h4>
+        </div>
+        <a href="/agenda/"><i class="fas fa-desktop"></i><span>Home</span></a>
+        <a href="/citas/"><i class="fas fa-sliders-h"></i><span>Agendar</span></a>
+        <a href="/pendientes/"><i class="fas fa-table"></i><span>Mis citas</span></a>
+        <a href="#"><i class="fas fa-info-circle"></i><span>info</span></a>
+    </div>
+    <!-- sidebar end -->
+
+    <div class="content">
+        <form action="" class="formulario" id="form">
+
+            <p class="formulario__parrafo">¡Llena este pequeño formulario para agendar tu cita!</p>
+
+            <!-- Cliente -->
+            <label for="nombre" class="formulario__label">¿Cual es tu nombre?</label>
+            <input id="cliente" type="text" class="formulario__input" required autocomplete="off">
+
+            <div id="notification" class="fixed top-20 right-0 left-0">
+                <!-- <div class="max-w-7xl mx-auto px-4 flex justify-end">
+                    <p class="bg-rose-200 p-4 w-3/12 rounded-lg">notification</p>
+                </div> -->
+            </div>
+
+            <!-- Fecha de cita -->
+            <label for="fecha" class="formulario__label">Indica la fecha de tu cita</label>
+            <input id="fecha" type="date" min="2023-09-01" max="2023-12-31" class="formulario__input" required
+                pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
+
+            <!-- Horario de la cita -->
+            <label for="hora" class="formulario__label">Indica la hora de tu cita</label>
+            <select id="hora" name="horario" class="formulario__input" required>
+                <option selected disabled>Selecciona el horario:</option>
+                <option>8am - 10am</option>
+                <option>11am - 1pm</option>
+                <option>2pm - 4pm</option>
+                <option>5pm - 7pm</option>
+            </select>
+
+            <!-- Servicios del cliente -->
+            <label for="servicios" class="formulario__label">¿Cuál es el servicio que se desea realizar?</label>
+            <select id="servicio" name="listaservicios" class="formulario__input">
+                <option selected disabled>Selecciona el servicio:</option>
+                <option>Jellys - 8,00$</option>
+                <option>Dipping powder - 6,00$</option>
+                <option>Kapping en gel - 7,00$</option>
+                <option>Manicure semipermanente - 4,00$</option>
+                <option>Pedicure semipermanente - 4,00$</option>
+                <option>Polygel - 8,00$</option>
+                <option>--PROMOCIONES--</option>
+                <option>semipermanente manicure y pedicure - 6,00$</option>
+                <option>jellys tips y pedicure - 10,00$</option>
+                <option>Polygel y pedicure - 10,00$</option>
+                <option>kapping en gel y pedicure - 9,00$</option>
+            </select>
+
+            <button id="submit" class="formulario__submit">Agendar Cita</button>
+        </form>
+    </div>
+
+
+    <script type="module" src="index.js"></script>
+    <script type="module" src="../components/notification.js"></script>
+</body>
+
+</html>
