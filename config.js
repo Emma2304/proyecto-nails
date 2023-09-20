@@ -1,5 +1,5 @@
 const PAGE_URL = process.env.NODE_ENV === 'production'
-    ? 'placeholder'
+    ? 'https://gloss-nails.onrender.com'
     : 'http://localhost:3004'
 
     const MONGO_URI = process.env.NODE_ENV === 'production'

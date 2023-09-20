@@ -33,6 +33,7 @@ app.use(cookieParser());
 
 // Rutas frontend
 app.use('/', express.static(path.resolve('views', 'home')));
+app.use('/styles', express.static(path.resolve('views', 'styles')));
 app.use('/signup', express.static(path.resolve('views', 'signup')));
 app.use('/login', express.static(path.resolve('views', 'login')));
 app.use('/citas', express.static(path.resolve('views', 'citas')));
